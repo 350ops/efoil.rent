@@ -230,9 +230,9 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
                 {/* Continue button */}
                 <button
                   onClick={() => setStep(3)}
-                  disabled={!locationSelected}
+                  disabled={!locationSelected || !location}
                   className={`w-full py-3 px-6 rounded-xl font-semibold transition-all ${
-                    locationSelected
+                    locationSelected && location
                       ? "bg-highlight text-black cursor-pointer hover:bg-highlight/90"
                       : "bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed opacity-60"
                   }`}

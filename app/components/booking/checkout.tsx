@@ -25,9 +25,14 @@ import type {
 let _stripePromise: ReturnType<typeof loadStripe> | null = null;
 function getStripePromise() {
   if (!_stripePromise) {
-    _stripePromise = loadStripe(
-      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-    );
+    const key = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+    if (!key) {
+      throw new Error(
+        "Missing NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY. " +
+        "Add it to .env.local and restart the dev server."
+      );
+    }
+    _stripePromise = loadStripe(key);
   }
   return _stripePromise;
 }
