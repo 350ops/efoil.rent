@@ -2,12 +2,20 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import type { CreatePaymentIntentRequest } from "@/app/components/booking/booking-types";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  typescript: true,
-});
+// Lazy-init to avoid build-time crash when env vars aren't available
+let _stripe: Stripe | null = null;
+function getStripe() {
+  if (!_stripe) {
+    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      typescript: true,
+    });
+  }
+  return _stripe;
+}
 
 export async function POST(request: Request) {
   try {
+    const stripe = getStripe();
     const body: CreatePaymentIntentRequest = await request.json();
 
     // Validate amount (Stripe minimum is $0.50 = 50 cents)
