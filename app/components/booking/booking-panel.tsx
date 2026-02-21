@@ -9,11 +9,14 @@ import { Calendar } from "./calendar";
 import { TimeSelector } from "./time-selector";
 import { LocationMap } from "./location-map";
 import { ServiceBreakdown } from "./service-breakdown";
+import { Checkout } from "./checkout";
+import { computePricing } from "./booking-utils";
 import type {
   DateRange,
   TimeSelection,
   Location,
   ServiceSelection,
+  PaymentState,
 } from "./booking-types";
 
 interface BookingPanelProps {
@@ -37,6 +40,11 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
   const [services, setServices] = useState<ServiceSelection>({
     efoils: { awakeRavik: 0, audiEtron: 0, fliteboard: 0 },
     instructorEnabled: false,
+  });
+  const [payment, setPayment] = useState<PaymentState>({
+    status: "idle",
+    clientSecret: null,
+    error: null,
   });
 
   const isDateReady = dateRange.start !== null && dateRange.end !== null;
@@ -63,6 +71,53 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
 
   const handleMapInteraction = () => {
     setLocationSelected(true);
+  };
+
+  const createPaymentIntent = async () => {
+    const pricing = computePricing(services, dateRange, time, location);
+    const amountInCents = Math.round(pricing.grandTotal * 100);
+
+    setPayment({ status: "creating", clientSecret: null, error: null });
+
+    try {
+      const res = await fetch("/api/create-payment-intent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: amountInCents,
+          metadata: {
+            dateStart: dateRange.start!.toISOString(),
+            dateEnd: dateRange.end!.toISOString(),
+            startTime: time.startTime,
+            endTime: time.endTime,
+            locationLat: location!.lat,
+            locationLng: location!.lng,
+            efoilAwakeRavik: services.efoils.awakeRavik,
+            efoilAudiEtron: services.efoils.audiEtron,
+            efoilFliteboard: services.efoils.fliteboard,
+            instructorEnabled: services.instructorEnabled,
+          },
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to initialize payment");
+      }
+
+      const { clientSecret } = await res.json();
+      setPayment({ status: "ready", clientSecret, error: null });
+      setStep(4);
+    } catch (err) {
+      setPayment({
+        status: "error",
+        clientSecret: null,
+        error:
+          err instanceof Error
+            ? err.message
+            : "Failed to initialize payment",
+      });
+    }
   };
 
   return (
@@ -216,18 +271,52 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
                   onServicesChange={setServices}
                 />
 
-                {/* Continue button */}
+                {/* Continue to payment button */}
                 <button
-                  disabled={!isServiceReady}
+                  onClick={createPaymentIntent}
+                  disabled={
+                    !isServiceReady || payment.status === "creating"
+                  }
                   className={`w-full py-3 px-6 rounded-xl font-semibold transition-all ${
-                    isServiceReady
+                    isServiceReady && payment.status !== "creating"
                       ? "bg-highlight text-black cursor-pointer hover:bg-highlight/90"
                       : "bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed opacity-60"
                   }`}
                 >
-                  Continue
+                  {payment.status === "creating" ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <DynamicIcon
+                        name="loader-2"
+                        className="w-4 h-4 animate-spin"
+                      />
+                      Preparing checkout...
+                    </span>
+                  ) : (
+                    "Continue to Payment"
+                  )}
                 </button>
+                {payment.status === "error" && (
+                  <p className="text-sm text-red-500 text-center">
+                    {payment.error}
+                  </p>
+                )}
               </div>
+            )}
+
+            {/* Step 4: Payment */}
+            {step === 4 && payment.clientSecret && (
+              <Checkout
+                clientSecret={payment.clientSecret}
+                pricing={computePricing(services, dateRange, time, location)}
+                dateRange={dateRange}
+                time={time}
+                location={location!}
+                services={services}
+                onBack={() => setStep(3)}
+                onSuccess={() => {
+                  // Payment succeeded — stay on confirmation view
+                }}
+              />
             )}
           </div>
         </motion.div>

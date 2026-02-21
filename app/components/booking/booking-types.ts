@@ -39,3 +39,41 @@ export interface BookingState {
   location: Location | null;
   services: ServiceSelection;
 }
+
+// ── Payment types ──────────────────────────────────────────
+
+export type PaymentStatus =
+  | "idle"
+  | "creating"
+  | "ready"
+  | "processing"
+  | "succeeded"
+  | "error";
+
+export interface PaymentState {
+  status: PaymentStatus;
+  clientSecret: string | null;
+  error: string | null;
+}
+
+/** Payload sent to POST /api/create-payment-intent */
+export interface CreatePaymentIntentRequest {
+  amount: number; // in cents (USD)
+  metadata: {
+    dateStart: string;
+    dateEnd: string;
+    startTime: string;
+    endTime: string;
+    locationLat: number;
+    locationLng: number;
+    efoilAwakeRavik: number;
+    efoilAudiEtron: number;
+    efoilFliteboard: number;
+    instructorEnabled: boolean;
+  };
+}
+
+/** Response from POST /api/create-payment-intent */
+export interface CreatePaymentIntentResponse {
+  clientSecret: string;
+}
