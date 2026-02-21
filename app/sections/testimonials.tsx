@@ -1,35 +1,35 @@
 "use client";
 import { DynamicIcon } from "lucide-react/dynamic";
+import Image from "next/image";
 import * as motion from "motion/react-client"
 import { cubicBezier } from "motion/react";
-
 export function Testimonials() {
   const testimonials = [
     {
-      name: "James Hartwell",
-      role: "Yacht Charter Captain",
-      company: "M/Y Serenity",
-      initials: "JH",
+      name: "Sophie Hargreaves",
+      role: "Director of Operations",
+      company: "Solaris Yacht Management",
+      image: "/img/user-1.jpg",
       content:
-        "The team coordinated perfectly with our position in the North Malé Atoll. The instructor arrived on tender, set up everything, and our guests were flying within 20 minutes. Outstanding service.",
+        "Manta Fleet cut our fuel and maintenance spend by over 15% in the first quarter. The invoicing is clean, the reporting is clear, and our captains have never had to chase a receipt. It just works.",
       rating: 5,
     },
     {
-      name: "Priya Mehta",
-      role: "Resort Activities Director",
-      company: "Private Island Resort",
-      initials: "PM",
+      name: "Carlos Veiga",
+      role: "General Manager",
+      company: "Blu Marina Resort",
+      image: "/img/user-2.jpg",
       content:
-        "We added eFoil sessions to our activity menu without any capital investment. Guests consistently rate it as the highlight of their stay. The partnership model is exactly what we needed.",
+        "We handed over all our marine equipment procurement and upkeep to Manta Fleet. Costs are predictable, vendors are vetted, and we get a full monthly report matched to each asset. Exactly what we needed.",
       rating: 5,
     },
     {
-      name: "Thomas Bouchard",
-      role: "First-time Rider",
-      company: "Maldives Vacation",
-      initials: "TB",
+      name: "Richard Tao",
+      role: "Fleet Captain",
+      company: "Archipelago Charters",
+      image: "/img/user-3.jpg",
       content:
-        "I had zero experience and was honestly nervous. The instructor was incredible — I was gliding above the water within my first session. One of the most unforgettable experiences of my life.",
+        "Before Manta Fleet, procurement was a mess — different vendors, unclear costs, no visibility. Now every expense is tracked against the vessel and job. The team is responsive and the savings are real.",
       rating: 5,
     },
   ];
@@ -38,34 +38,36 @@ export function Testimonials() {
     <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: cubicBezier(0.4, 0, 0.2, 1) }}
-          className="text-center mb-16 space-y-3">
+        <motion.div 
+        
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay:0.2, ease: cubicBezier(0.4, 0, 0.2, 1) }}
+        className="text-center mb-16 space-y-3">
           <div className="inline-block px-4 py-1.5 bg-highlight rounded-full">
             <span className="text-xs uppercase font-bold text-black">Testimonials</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Loved by guests worldwide
+            Trusted by yachts, resorts & marinas
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            From superyacht captains to first-time riders — hear what our guests have to say
+            Hear from the operators who rely on Manta Fleet to control costs and run tight fleet operations
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.5,
-            delay: 0.4,
-            ease: cubicBezier(0.4, 0, 0.2, 1)
-          }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <motion.div 
+        
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ 
+          duration: 0.5, 
+          delay:0.4,
+          ease: cubicBezier(0.4, 0, 0.2, 1) 
+        }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -80,27 +82,29 @@ export function Testimonials() {
 
               {/* Content */}
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                &ldquo;{testimonial.content}&rdquo;
+                "{testimonial.content}"
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 mt-auto">
-                <div className="w-12 h-12 bg-highlight rounded-full flex items-center justify-center text-black font-bold text-sm">
-                  {testimonial.initials}
+                <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center text-2xl">
+                  <Image className="size-full object-cover rounded-full" src={testimonial.image} alt={testimonial.name} width={48} height={48} />
                 </div>
                 <div>
                   <div className="font-semibold text-zinc-900 dark:text-white">
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-zinc-500 dark:text-zinc-500">
-                    {testimonial.role} · {testimonial.company}
+                    {testimonial.role} at {testimonial.company}
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );
 }
+

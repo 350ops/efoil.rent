@@ -8,44 +8,29 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: "What is an eFoil?",
+      question: "What exactly does Manta Fleet manage?",
       answer:
-        "An eFoil — short for electric hydrofoil surfboard — is a cutting-edge watersport device. It merges traditional hydrofoil surfing with advanced electric propulsion, allowing riders to glide silently above the water. An eFoil consists of a board with a rechargeable battery, an electric motor, and a hydrofoil (mast with underwater wing). Speed is controlled via a wireless handheld remote, while altitude is managed by shifting body weight.",
+        "We manage the day-to-day operational spend for your marine fleet — including fuel and bunkering, routine and emergency maintenance, parts and equipment procurement, and marina or port service fees. We act as your operational partner, handling vendor relationships and spend on your behalf, then invoice you against agreed terms.",
     },
     {
-      question: "How does eFoil delivery to yachts and resorts work?",
+      question: "Which types of clients do you work with?",
       answer:
-        "We connect you with trusted partners who bring the Audi e-tron eFoil directly to your yacht, liveaboard, or resort. They handle all transport, setup, and equipment handover — you just show up and fly.",
+        "Our core clients are yacht management companies, resort operators with marine assets, marina operators, and charter businesses. We work on a B2B contract basis — if you operate one or more vessels and want tighter cost control, we can help.",
     },
     {
-      question: "Is eFoiling suitable for beginners?",
+      question: "How does invoicing and billing work?",
       answer:
-        "Yes. All our partners provide professional instruction and safety briefings. The Audi e-tron eFoil is beginner-friendly, and most riders are up and flying within a short session. No prior experience is required.",
+        "We operate on an invoice-and-contract model. You agree a scope and service level with us, we handle the spend and procurement on your behalf, and you receive a clean monthly invoice with a full breakdown by vessel, category, and job reference. No surprise charges.",
     },
     {
-      question: "What is the minimum rental duration?",
+      question: "Can you manage procurement across multiple vessels or locations?",
       answer:
-        "Our partners offer flexible packages starting from 2-hour sessions. You can also arrange to keep the eFoil for the duration of your stay (multiple days) for maximum freedom on the water.",
+        "Yes. Our Operations and Enterprise plans are built for multi-vessel and multi-location fleets. We track spend per asset, apply category-level controls, and reconcile everything in a single report. We also have vendor relationships across UK marinas and international ports.",
     },
     {
-      question: "What happens if the weather is bad on my booking day?",
+      question: "How quickly can we get started?",
       answer:
-        "Safety is paramount. Our partners monitor weather conditions and will work with you to reschedule if conditions are unsafe for riding. Weather-related cancellations are always fully refundable or rescheduled at no charge.",
-    },
-    {
-      question: "Is a safety briefing included?",
-      answer:
-        "Yes. Every rental includes a safety briefing and equipment overview from the provider. Life vests, helmets, and all essential protective gear are standard — provided at no extra cost.",
-    },
-    {
-      question: "How do I book an eFoil rental?",
-      answer:
-        "Simply contact us via WhatsApp or email with your dates and location. We will coordinate with our partners to find the best package for you and handle all booking arrangements. It's that simple.",
-    },
-    {
-      question: "What eFoil equipment is used?",
-      answer:
-        "Our partners exclusively use the Audi e-tron eFoil, known for its safety features, performance, and silence. The Aeroloop inflatable board combines the rigidity of a hardboard with portable safety. We ensure you ride the best equipment available in the Maldives.",
+        "Typically we can onboard a new client within 1–2 weeks. This includes agreeing the contract terms, mapping your vessels and cost centres, and introducing your account manager. Contact us at hello@efoil.rent to begin the conversation.",
     },
   ];
 
@@ -61,7 +46,7 @@ export function FAQ() {
             Frequently asked questions
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            Common questions about eFoil rentals in Maldives
+            We have quick answers to the most popular questions below
           </p>
         </div>
 
@@ -89,7 +74,7 @@ export function FAQ() {
                     openIndex === index ? "rotate-135" : ""
                   }`}
                 >
-                  <DynamicIcon name="plus" className="w-5 h-5 text-black dark:text-white" />
+                  <DynamicIcon name="plus" className="w-5 h-5 text-black" />
                 </div>
               </button>
               <div
@@ -108,3 +93,4 @@ export function FAQ() {
     </section>
   );
 }
+

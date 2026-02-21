@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "eFoil Maldives — Premium eFoil Rentals",
-  description: "Premium Audi e-tron eFoil rentals in Maldives. Delivered to yachts, boats, and resorts.",
+  title: "Manta Fleet – B2B Marine Fleet Management for Yachts, Resorts & Marinas",
+  description: "Manta Fleet provides B2B fleet operations and managed services for yachts, resorts, and marinas — controlling fuel, maintenance, and procurement costs.",
 };
 
 export default function RootLayout({

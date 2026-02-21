@@ -2,8 +2,8 @@ import { Footer } from "../sections/footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy - AppName",
-  description: "Privacy Policy for AppName",
+  title: "Privacy Policy – efoil.rent | Manta Fleet Limited",
+  description: "Privacy Policy for efoil.rent, operated by Manta Fleet Limited.",
 };
 
 export default function PrivacyPolicy() {
@@ -38,9 +38,7 @@ export default function PrivacyPolicy() {
                 1. Introduction
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                Welcome to AppName ("we," "our," or "us"). We are committed to protecting your personal information 
-                and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard 
-                your information when you use our mobile application and services.
+                Welcome to efoil.rent, a trading name of Manta Fleet Limited ("we," "our," or "us"), a private limited company registered in England and Wales (Company No. 17041670), with registered office at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, 
@@ -178,9 +176,9 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
               <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-6">
-                <p className="text-zinc-900 dark:text-white mb-2"><strong>Email:</strong> privacy@appname.com</p>
-                <p className="text-zinc-900 dark:text-white mb-2"><strong>Address:</strong> 123 Main Street, Suite 100, City, State 12345</p>
-                <p className="text-zinc-900 dark:text-white"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p className="text-zinc-900 dark:text-white mb-2"><strong>Email:</strong> hello@efoil.rent</p>
+                <p className="text-zinc-900 dark:text-white mb-2"><strong>Company:</strong> Manta Fleet Limited (Company No. 17041670)</p>
+                <p className="text-zinc-900 dark:text-white"><strong>Address:</strong> 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</p>
               </div>
             </section>
           </div>

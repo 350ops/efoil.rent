@@ -2,8 +2,8 @@ import { Footer } from "../sections/footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms and Conditions - AppName",
-  description: "Terms and Conditions for AppName",
+  title: "Terms and Conditions – efoil.rent | Manta Fleet Limited",
+  description: "Terms and Conditions for efoil.rent, operated by Manta Fleet Limited.",
 };
 
 export default function TermsAndConditions() {
@@ -38,8 +38,7 @@ export default function TermsAndConditions() {
                 1. Agreement to Terms
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                By accessing or using AppName (the "Service"), you agree to be bound by these Terms and Conditions 
-                ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+                By accessing or using efoil.rent (the "Service"), operated by Manta Fleet Limited (Company No. 17041670), registered in England and Wales, you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of these terms, you may not access the Service.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 We reserve the right to update these Terms at any time. Your continued use of the Service after 
@@ -105,12 +104,12 @@ export default function TermsAndConditions() {
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                 The Service and its original content, features, and functionality are and will remain the exclusive 
-                property of AppName and its licensors. The Service is protected by copyright, trademark, and other 
-                laws of both the United States and foreign countries.
+                property of Manta Fleet Limited and its licensors. The Service is protected by copyright, trademark, and other 
+                laws of England and Wales and applicable international laws.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 Our trademarks and trade dress may not be used in connection with any product or service without 
-                the prior written consent of AppName.
+                the prior written consent of Manta Fleet Limited.
               </p>
             </section>
 
@@ -162,7 +161,7 @@ export default function TermsAndConditions() {
                 8. Limitation of Liability
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                In no event shall AppName, nor its directors, employees, partners, agents, suppliers, or affiliates, 
+                In no event shall Manta Fleet Limited, nor its directors, employees, partners, agents, suppliers, or affiliates, 
                 be liable for any indirect, incidental, special, consequential, or punitive damages, including without 
                 limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:
               </p>
@@ -190,9 +189,7 @@ export default function TermsAndConditions() {
                 10. Governing Law
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                These Terms shall be governed and construed in accordance with the laws of the United States, 
-                without regard to its conflict of law provisions. Our failure to enforce any right or provision 
-                of these Terms will not be considered a waiver of those rights.
+                These Terms shall be governed and construed in accordance with the laws of England and Wales. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
               </p>
             </section>
 
@@ -215,9 +212,9 @@ export default function TermsAndConditions() {
                 If you have any questions about these Terms and Conditions, please contact us:
               </p>
               <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-6">
-                <p className="text-zinc-900 dark:text-white mb-2"><strong>Email:</strong> legal@appname.com</p>
-                <p className="text-zinc-900 dark:text-white mb-2"><strong>Address:</strong> 123 Main Street, Suite 100, City, State 12345</p>
-                <p className="text-zinc-900 dark:text-white"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p className="text-zinc-900 dark:text-white mb-2"><strong>Email:</strong> hello@efoil.rent</p>
+                <p className="text-zinc-900 dark:text-white mb-2"><strong>Company:</strong> Manta Fleet Limited (Company No. 17041670)</p>
+                <p className="text-zinc-900 dark:text-white"><strong>Address:</strong> 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom</p>
               </div>
             </section>
           </div>

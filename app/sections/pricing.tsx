@@ -7,57 +7,53 @@ import * as motion from "motion/react-client";
 export function Pricing() {
   const pricingPlans = [
     {
-      name: "Test Drive",
-      price: "From",
-      priceHighlight: "Foiltribe",
-      period: "· Hulhumalé",
-      description: "Collaborating with Foiltribe to provide accessible rentals and lessons for all ages",
+      name: "Essentials",
+      price: "Custom",
+      period: "",
+      description: "For single-vessel operators and small marinas",
       features: [
-        "Single session rentals",
-        "Professional lessons",
-        "Open to all skill levels",
-        "Located in Hulhumalé",
-        "Certified instructors",
+        "Fuel & bunkering management",
+        "Routine maintenance scheduling",
+        "Monthly spend report",
+        "Vetted vendor network",
+        "Email support",
       ],
-      cta: "Contact on Instagram",
-      ctaHref: "https://ig.me/m/efoil.rent",
+      cta: "Get a Quote",
       highlighted: false,
     },
     {
-      name: "Point to Point Delivery",
+      name: "Operations",
       price: "Custom",
-      period: "quote",
-      description: "We bring the full Audi e-tron eFoil experience directly to your yacht, resort, or private villa",
+      period: "",
+      description: "For resorts and multi-vessel fleets",
       features: [
-        "Maldives-wide delivery & pickup",
-        "Multi-day stays available",
-        "Beginner instruction included",
-        "Full safety kit (vest + helmet)",
-        "Optional add-ons (extra battery, GoPro)",
-        "Flexible scheduling",
-        "Insurance & liability covered",
+        "Everything in Essentials",
+        "Procurement management",
+        "Per-vessel cost tracking",
+        "Weekly reporting & reconciliation",
+        "Dedicated account manager",
+        "Priority vendor response",
+        "SLA-backed service",
       ],
-      cta: "Book via WhatsApp",
-      ctaHref: "https://wa.me/9606783344?text=Hi%21+I%27d+like+to+book+an+eFoil+experience.",
+      cta: "Get a Quote",
       highlighted: true,
       badge: "Most Popular",
     },
     {
-      name: "Determination Program",
-      price: "First 3",
-      period: "sessions free",
-      description: "Adaptive eFoil experiences — we cover the cost of the first 3 sessions for people with disabilities",
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      description: "For large yacht groups & resort chains",
       features: [
-        "First 3 sessions complimentary",
-        "Personalized instruction",
-        "Priority scheduling",
-        "Specialized safety protocols",
-        "Located in Hulhumalé",
+        "Everything in Operations",
+        "Multi-property management",
+        "Custom contract terms",
+        "Real-time spend dashboard",
+        "Spend controls by category",
+        "On-site support options",
       ],
-      cta: "Inquire on Instagram",
-      ctaHref: "https://ig.me/m/efoil.rent",
+      cta: "Talk to Us",
       highlighted: false,
-      badge: "Accessibility Initiative",
     },
   ];
 
@@ -73,13 +69,13 @@ export function Pricing() {
           className="text-center mb-16 space-y-4"
         >
           <div className="inline-block px-4 py-1.5 bg-highlight rounded-full">
-            <span className="text-xs uppercase font-bold text-black">Packages</span>
+            <span className="text-xs uppercase font-bold text-black">Pricing</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Choose your eFoil experience
+            Managed service plans
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Whether you need delivery to your yacht or a local test session — we have you covered.
+            All plans are contract-based and priced to your fleet size. No hidden fees — just a clear monthly invoice against agreed scope.
           </p>
         </motion.div>
 
@@ -104,10 +100,10 @@ export function Pricing() {
                   : "border border-transparent"
               }`}
             >
-              {/* Badge */}
+              {/* Badge for highlighted plan */}
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1.5 bg-highlight text-black text-xs font-bold rounded-full uppercase whitespace-nowrap">
+                  <span className="px-4 py-1.5 bg-highlight text-black text-xs font-bold rounded-full uppercase">
                     {plan.badge}
                   </span>
                 </div>
@@ -130,7 +126,7 @@ export function Pricing() {
                     {plan.price}
                   </span>
                   {plan.period && (
-                    <span className="text-zinc-600 dark:text-zinc-400 text-sm">
+                    <span className="text-zinc-600 dark:text-zinc-400">
                       {plan.period}
                     </span>
                   )}
@@ -157,18 +153,15 @@ export function Pricing() {
               </ul>
 
               {/* CTA Button */}
-              <a
-                href={plan.ctaHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full cursor-pointer py-3 px-6 rounded-xl font-semibold transition-all text-center ${
+              <button
+                className={`w-full cursor-pointer py-3 px-6 rounded-xl font-semibold transition-all ${
                   plan.highlighted
                     ? "bg-highlight text-black hover:bg-highlight/90"
                     : "bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 }`}
               >
                 {plan.cta}
-              </a>
+              </button>
             </div>
           ))}
         </motion.div>
@@ -181,12 +174,13 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-12 text-sm text-zinc-600 dark:text-zinc-400"
         >
-          All rentals include professional instruction and safety gear.{" "}
+          All plans are billed by invoice. No consumer billing, no upfront card payments required.{" "}
           <a href="mailto:hello@efoil.rent" className="text-zinc-900 dark:text-white font-semibold hover:underline">
-            Contact us for custom pricing →
+            Contact us to discuss your fleet →
           </a>
         </motion.p>
       </div>
     </section>
   );
 }
+

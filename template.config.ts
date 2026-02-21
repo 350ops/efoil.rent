@@ -1,6 +1,6 @@
 /**
  * Template Configuration
- *
+ * 
  * Customize your landing page by editing the values below.
  * This centralizes common customizations for easier template management.
  */
@@ -8,108 +8,107 @@
 export const templateConfig = {
   // Brand Information
   brand: {
-    name: "eFoil Maldives",
-    tagline: "The Pinnacle of Electric Hydrofoiling",
-    description: "Premium Audi e-tron eFoil rentals delivered to your yacht, resort, or private island in Maldives.",
+    name: "efoil.rent",
+    legalName: "Manta Fleet Limited",
+    companyNumber: "17041670",
+    tagline: "Ride the Future of Watersports",
+    description: "Electric hydrofoil rentals and professional marine fleet management. Available for individuals, groups, yachts, resorts, and marinas.",
+    address: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom",
   },
 
   // Contact & Social
   contact: {
     email: "hello@efoil.rent",
-    phone: "+960 9606783344",
-    whatsapp: "https://wa.me/9606783344",
-    instagram: "https://ig.me/m/efoil.rent",
-    booking: "https://cal.com/efoil-maldives",
-    website: "https://www.efoil.rent",
+    phone: "",
   },
 
   social: {
-    twitter: "#",
-    github: "#",
-    linkedin: "#",
-    facebook: "#",
-    instagram: "https://www.instagram.com/efoil.rent/",
+    twitter: "https://twitter.com/efoilrent",
+    github: "",
+    linkedin: "https://linkedin.com/company/manta-fleet",
+    facebook: "https://facebook.com/efoilrent",
+    instagram: "https://instagram.com/efoilrent",
   },
 
   // Theme Colors (Tailwind classes)
   theme: {
-    primary: "cyan-400",
-    primaryDark: "cyan-500",
-    secondary: "sky-500",
-    accent: "cyan-400",
+    primary: "lime-400",
+    primaryDark: "lime-500",
+    secondary: "emerald-500",
+    accent: "lime-400",
   },
 
   // Features Section
   features: [
     {
-      icon: "anchor",
-      title: "Yacht & Boat Delivery",
-      description: "We deliver the eFoil directly to your vessel anywhere in the Maldives atolls",
+      icon: "⚡",
+      title: "Electric Hydrofoil",
+      description: "Ride the latest e-foil boards for an unforgettable experience above the water",
       link: "#",
     },
     {
-      icon: "building",
-      title: "Resort Service",
-      description: "Premium eFoil sessions at luxury resorts and private islands on demand",
+      icon: "🌊",
+      title: "Prime Locations",
+      description: "Operating across top UK and international waterways and coastal destinations",
       link: "#",
     },
     {
-      icon: "graduation-cap",
-      title: "Expert Instruction",
-      description: "Professional instructor included with every session — beginners welcome",
+      icon: "👥",
+      title: "Expert Instructors",
+      description: "Professional training for all skill levels — from complete beginners to advanced riders",
       link: "#",
     },
     {
-      icon: "zap",
-      title: "Audi e-tron eFoil",
-      description: "Ride the world's finest electric hydrofoil — engineered by Audi for performance",
+      icon: "🚢",
+      title: "Fleet Management",
+      description: "Full B2B marine operations for yachts, resorts, and marinas",
       link: "#",
     },
   ],
 
-  // Stats for CTA Section
+  // Stats
   stats: {
-    users: "95%",
-    rating: "4.9★",
-    countries: "Maldives-wide",
+    sessions: "500+",
+    rating: "5★",
+    locations: "UK & Global",
   },
 
   // Navigation Links
   navigation: {
     main: [
-      { name: "Features", href: "#features" },
+      { name: "Services", href: "#features" },
       { name: "About", href: "#about" },
-      { name: "Packages", href: "#pricing" },
       { name: "FAQ", href: "#faq" },
     ],
-    experiences: [
-      { name: "Yacht Delivery", href: "#" },
-      { name: "Resort Service", href: "#" },
-      { name: "Crew Trips", href: "#" },
-      { name: "Audi e-tron Board", href: "#" },
+    services: [
+      { name: "E-foil Rentals", href: "#" },
+      { name: "Fleet Management", href: "#" },
+      { name: "B2B Packages", href: "#" },
+      { name: "Safety & Training", href: "#" },
     ],
     company: [
       { name: "About Us", href: "#" },
-      { name: "Events", href: "#" },
-      { name: "Partners", href: "#" },
+      { name: "Careers", href: "#" },
       { name: "Blog", href: "#" },
+      { name: "Press Kit", href: "#" },
     ],
-    contact: [
-      { name: "WhatsApp Us", href: "https://wa.me/9606783344" },
-      { name: "Email Us", href: "mailto:hello@efoil.rent" },
-      { name: "Instagram", href: "https://www.instagram.com/efoil.rent/" },
+    support: [
+      { name: "Help Centre", href: "#" },
+      { name: "Contact Us", href: "#" },
+      { name: "Cancellation Policy", href: "#" },
       { name: "Terms of Service", href: "/terms" },
     ],
   },
 
   // SEO & Metadata
   seo: {
-    title: "eFoil Maldives — Premium eFoil Rentals",
-    description: "Premium Audi e-tron eFoil rentals in Maldives. Delivered to yachts, boats, and resorts.",
-    keywords: ["efoil", "maldives", "electric hydrofoil", "audi efoil", "efoil rental", "watersport maldives"],
-    ogImage: "/img/efoil-hero.jpeg",
-    twitterHandle: "@efoilmaldives",
+    title: "efoil.rent – Electric Hydrofoil Rentals & Marine Fleet Management",
+    description: "Ride the latest electric hydrofoils with Manta Fleet. E-foil rentals for individuals, groups, yachts, resorts, and marinas across the UK and beyond.",
+    keywords: ["efoil", "e-foil rental", "electric hydrofoil", "marine fleet", "watersports", "UK", "Manta Fleet"],
+    ogImage: "/og-image.png",
+    twitterHandle: "@efoilrent",
   },
 };
 
 export type TemplateConfig = typeof templateConfig;
+
