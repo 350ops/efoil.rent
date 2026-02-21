@@ -1,0 +1,110 @@
+"use client";
+import { DynamicIcon } from "lucide-react/dynamic";
+import Image from "next/image";
+import * as motion from "motion/react-client"
+import { cubicBezier } from "motion/react";
+export function Testimonials() {
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "Product Manager",
+      company: "TechCorp",
+      image: "/img/user-1.jpg",
+      content:
+        "This app has completely transformed how we handle our daily operations. The interface is intuitive and the features are exactly what we needed.",
+      rating: 5,
+    },
+    {
+      name: "Michael Chen",
+      role: "Entrepreneur",
+      company: "StartupXYZ",
+      image: "/img/user-2.jpg",
+      content:
+        "I've tried many similar solutions, but this one stands out. The security features give me peace of mind, and the customer support is outstanding.",
+      rating: 5,
+    },
+    {
+      name: "Emma Williams",
+      role: "Designer",
+      company: "Creative Studio",
+      image: "/img/user-3.jpg",
+      content:
+        "Beautiful design and seamless user experience. It's rare to find an app that combines functionality with such great aesthetics.",
+      rating: 5,
+    },
+  ];
+
+  return (
+    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
+        <motion.div 
+        
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay:0.2, ease: cubicBezier(0.4, 0, 0.2, 1) }}
+        className="text-center mb-16 space-y-3">
+          <div className="inline-block px-4 py-1.5 bg-highlight rounded-full">
+            <span className="text-xs uppercase font-bold text-black">Testimonials</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
+            Loved by users worldwide
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Don't just take our word for it - hear what our customers have to say
+          </p>
+        </motion.div>
+
+        {/* Testimonials Grid */}
+        <motion.div 
+        
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ 
+          duration: 0.5, 
+          delay:0.4,
+          ease: cubicBezier(0.4, 0, 0.2, 1) 
+        }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-white flex flex-col dark:bg-black rounded-3xl p-8 space-y-6 hover:shadow-xl dark:hover:shadow-lime-400/5 transition-shadow"
+            >
+              {/* Rating Stars */}
+              <div className="flex gap-1">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <DynamicIcon key={i} name="star" className="w-5 h-5 text-transparent fill-black dark:fill-white" />
+                ))}
+              </div>
+
+              {/* Content */}
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                "{testimonial.content}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 mt-auto">
+                <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center text-2xl">
+                  <Image className="size-full object-cover rounded-full" src={testimonial.image} alt={testimonial.name} width={48} height={48} />
+                </div>
+                <div>
+                  <div className="font-semibold text-zinc-900 dark:text-white">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-zinc-500 dark:text-zinc-500">
+                    {testimonial.role} at {testimonial.company}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}
+
