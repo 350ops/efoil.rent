@@ -8,7 +8,13 @@ import { DynamicIcon } from "lucide-react/dynamic";
 import { Calendar } from "./calendar";
 import { TimeSelector } from "./time-selector";
 import { LocationMap } from "./location-map";
-import type { DateRange, TimeSelection, Location } from "./booking-types";
+import { ServiceBreakdown } from "./service-breakdown";
+import type {
+  DateRange,
+  TimeSelection,
+  Location,
+  ServiceSelection,
+} from "./booking-types";
 
 interface BookingPanelProps {
   isOpen: boolean;
@@ -28,8 +34,18 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
   });
   const [location, setLocation] = useState<Location | null>(null);
   const [locationSelected, setLocationSelected] = useState(false);
+  const [services, setServices] = useState<ServiceSelection>({
+    efoils: { awakeRavik: 0, audiEtron: 0, fliteboard: 0 },
+    instructorEnabled: false,
+  });
 
   const isDateReady = dateRange.start !== null && dateRange.end !== null;
+
+  const totalEfoils =
+    services.efoils.awakeRavik +
+    services.efoils.audiEtron +
+    services.efoils.fliteboard;
+  const isServiceReady = totalEfoils > 0;
 
   // Format selected dates for summary display
   const formatDate = (date: Date | null) => {
@@ -158,9 +174,53 @@ export function BookingPanel({ isOpen }: BookingPanelProps) {
 
                 {/* Continue button */}
                 <button
+                  onClick={() => setStep(3)}
                   disabled={!locationSelected}
                   className={`w-full py-3 px-6 rounded-xl font-semibold transition-all ${
                     locationSelected
+                      ? "bg-highlight text-black cursor-pointer hover:bg-highlight/90"
+                      : "bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed opacity-60"
+                  }`}
+                >
+                  Continue
+                </button>
+              </div>
+            )}
+
+            {/* Step 3: Service Breakdown */}
+            {step === 3 && (
+              <div className="space-y-5">
+                {/* Back button + header */}
+                <div>
+                  <button
+                    onClick={() => setStep(2)}
+                    className="flex items-center gap-1 text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors mb-2 cursor-pointer"
+                  >
+                    <DynamicIcon name="arrow-left" className="w-3 h-3" />
+                    Back to location
+                  </button>
+                  <h3 className="text-base font-bold text-neutral-900 dark:text-white">
+                    Configure your rental
+                  </h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    Select eFoil models and optional services
+                  </p>
+                </div>
+
+                {/* Service breakdown */}
+                <ServiceBreakdown
+                  dateRange={dateRange}
+                  time={time}
+                  location={location!}
+                  services={services}
+                  onServicesChange={setServices}
+                />
+
+                {/* Continue button */}
+                <button
+                  disabled={!isServiceReady}
+                  className={`w-full py-3 px-6 rounded-xl font-semibold transition-all ${
+                    isServiceReady
                       ? "bg-highlight text-black cursor-pointer hover:bg-highlight/90"
                       : "bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed opacity-60"
                   }`}
