@@ -20,11 +20,17 @@ import type {
   PaymentStatus,
 } from "./booking-types";
 
-// ── Stripe singleton ───────────────────────────────────────
+// ── Stripe singleton (lazy to ensure env var is available) ──
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-);
+let _stripePromise: ReturnType<typeof loadStripe> | null = null;
+function getStripePromise() {
+  if (!_stripePromise) {
+    _stripePromise = loadStripe(
+      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+    );
+  }
+  return _stripePromise;
+}
 
 // ── Props ──────────────────────────────────────────────────
 
@@ -99,7 +105,7 @@ export function Checkout({
   );
 
   return (
-    <Elements stripe={stripePromise} options={options}>
+    <Elements stripe={getStripePromise()} options={options}>
       <CheckoutForm
         pricing={pricing}
         dateRange={dateRange}
