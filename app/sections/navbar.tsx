@@ -18,54 +18,54 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur-md ">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#DBED2E]/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div onClick={() => scrollToSection("hero")} className="flex items-center gap-2 cursor-pointer">
-            <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-              <span className="text-white dark:text-black font-bold text-lg">M</span>
+          <div onClick={() => scrollToSection("hero")} className="cursor-pointer">
+            <span
+              className="text-black tracking-[-0.04em] leading-none select-none text-4xl"
+              style={{ fontFamily: "var(--font-young-serif)" }}
+            >
+              manta
+            </span>
+          </div>
+
+          {/* Right side: Navigation Links + CTA Buttons */}
+          <div className="flex items-center gap-8">
+            <div className="hidden md:flex items-end justify-start gap-8 text-sm flex-wrap box-content pt-3.5 pb-3.5 pl-0 pr-0">
+              <button
+                onClick={() => scrollToSection("features")}
+                className="text-black cursor-pointer hover:text-white transition-colors"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-black cursor-pointer hover:text-white transition-colors"
+              >
+                How It Works
+              </button>
+              <button
+                onClick={() => scrollToSection("pricing")}
+                className="text-black cursor-pointer hover:text-white transition-colors"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => scrollToSection("faq")}
+                className="text-black cursor-pointer hover:text-white transition-colors"
+              >
+                FAQ
+              </button>
             </div>
-            <span className="text-xl font-bold text-zinc-900 dark:text-white">Manta Fleet</span>
-          </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-8 text-sm">
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-zinc-600 cursor-pointer dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-zinc-600 cursor-pointer dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              How It Works
-            </button>
-            <button
-              onClick={() => scrollToSection("pricing")}
-              className="text-zinc-600 cursor-pointer dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              Pricing
-            </button>
-            <button
-              onClick={() => scrollToSection("faq")}
-              className="text-zinc-600 cursor-pointer dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            >
-              FAQ
-            </button>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <button onClick={() => scrollToSection("testimonials")} className="px-4 cursor-pointer py-2 text-xs border border-zinc-500 dark:border-zinc-200 rounded-xl font-medium transition-colors">
-              Client Stories
-            </button>
-            <a href="mailto:hello@efoil.rent" className="px-4 cursor-pointer py-2 text-xs bg-black dark:bg-white text-white dark:text-black rounded-xl font-medium hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors">
-              Get a Quote
-            </a>
+            <div className="flex items-center gap-3">
+              <a href="mailto:hello@efoil.rent" className="px-4 cursor-pointer py-2 text-xs bg-black text-white rounded-xl font-medium hover:bg-zinc-200 transition-colors">
+                Get a Quote
+              </a>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

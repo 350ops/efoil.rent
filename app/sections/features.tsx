@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { DynamicIcon } from "lucide-react/dynamic";
 import { cubicBezier } from "motion/react";
 import * as motion from "motion/react-client"
@@ -33,26 +34,32 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-[27px] -mt-[234px] -mb-[234px] px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 100 }}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay:0.2, ease: cubicBezier(0.4, 0, 0.2, 1) }}
-          className="text-center mb-16 space-y-4"
+          transition={{ duration: 0.6, delay: 0.2, ease: cubicBezier(0.4, 0, 0.2, 1) }}
+          className="mb-16 rounded-3xl overflow-hidden relative"
         >
-          <div className="inline-block px-4 py-1.5 bg-highlight rounded-full">
-            <span className="text-xs uppercase font-bold text-black">Services</span>
+          <Image
+            src="/solar-panels-deck.png"
+            alt="Solar panels on yacht teak deck"
+            width={1200}
+            height={480}
+            className="w-full h-64 md:h-80 object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col items-center justify-end pb-8 text-center px-6">
+            <div className="inline-block px-4 py-1.5 bg-highlight rounded-full mb-3">
+              <span className="text-xs uppercase font-bold text-black">Services</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Every aspect of your operation in one dashboard
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Full fleet management,<br />
-            zero operational headache
-          </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            We take care of every line item — fuel, maintenance, and procurement — so your operation runs smoothly and your costs stay under control.
-          </p>
         </motion.div>
 
         {/* Features Grid */}
@@ -65,24 +72,20 @@ export function Features() {
           delay:0.4,
           ease: cubicBezier(0.4, 0, 0.2, 1) 
         }}
-        className="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
+        className="flex flex-row justify-center gap-8 flex-wrap">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={`group flex flex-col min-h-80 relative bg-white dark:bg-zinc-950 rounded-3xl p-8 hover:border-lime-400 dark:hover:border-lime-400 transition-all duration-300 ${feature.isHighlight ? "!bg-highlight" : ""}`}
+              className={`group flex flex-col items-center justify-center w-36 h-36 rounded-full relative transition-all duration-300 cursor-default ${feature.isHighlight ? "bg-black" : "bg-white dark:bg-zinc-950"}`}
+              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 0.2 }}
             >
-              {/* Icon */}
-              <div className={`mb-6 w-14 h-14 bg-neutral-100 dark:bg-zinc-900 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform ${feature.isHighlight ? "!bg-black/10" : ""}`}>
-                <DynamicIcon name={feature.icon as any} className="w-6 h-6" />
+              <div className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center mb-2 ${feature.isHighlight ? "bg-black/10" : "bg-neutral-100 dark:bg-zinc-900"}`}>
+                <DynamicIcon name={feature.icon as any} className={`w-5 h-5 ${feature.isHighlight ? "text-highlight" : ""}`} />
               </div>
-
-              {/* Content */}
-              <h3 className={`text-xl font-bold text-zinc-900 dark:text-white mb-1 mt-auto ${feature.isHighlight ? "!text-black" : ""}`}>
+              <span className={`text-xs font-bold text-center leading-tight px-3 ${feature.isHighlight ? "text-black" : "text-zinc-800 dark:text-white"}`}>
                 {feature.title}
-              </h3>
-              <p className={`text-zinc-600 text-sm dark:text-zinc-400 ${feature.isHighlight ? "!text-black" : ""}`}>
-                {feature.description}
-              </p>
+              </span>
             </motion.div>
           ))}
         </motion.div>

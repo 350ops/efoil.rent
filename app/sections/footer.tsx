@@ -10,12 +10,14 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                <span className="text-white dark:text-black font-bold text-lg">M</span>
-              </div>
-            <span className="text-xl font-bold text-zinc-900 dark:text-white">Manta Fleet</span>
-          </div>
+            <div>
+              <span
+                className="text-zinc-900 dark:text-white tracking-[-0.04em] leading-none select-none text-3xl"
+                style={{ fontFamily: "var(--font-young-serif)" }}
+              >
+                manta
+              </span>
+            </div>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm">
               B2B fleet operations and managed services for yachts, resorts, and marinas. Fuel, maintenance, and procurement — controlled.
             </p>

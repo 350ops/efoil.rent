@@ -12,7 +12,7 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="pt-32 pb-[43px] px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex md:flex-row flex-col gap-4">
           {/* Left Column - Text Content */}
@@ -54,6 +54,10 @@ export function Hero() {
               <div className="px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl flex items-center gap-2">
                 <DynamicIcon name="file-text" className="w-4 h-4 text-lime-500" />
                 <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">Clear Invoicing & SLAs</span>
+              </div>
+              <div className="px-4 py-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl flex items-center gap-2">
+                <DynamicIcon name="headset" className="w-4 h-4 text-lime-500" />
+                <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">24/7 Support</span>
               </div>
             </div>
           </motion.div>
