@@ -1,6 +1,6 @@
 /**
  * Template Configuration
- * 
+ *
  * Customize your landing page by editing the values below.
  * This centralizes common customizations for easier template management.
  */
@@ -8,110 +8,108 @@
 export const templateConfig = {
   // Brand Information
   brand: {
-    name: "AppName",
-    tagline: "Secure & Easy-to-Use App Solution",
-    description: "Store, Send & Receive everything with confidence. Experience the future of digital solutions.",
+    name: "eFoil Maldives",
+    tagline: "The Pinnacle of Electric Hydrofoiling",
+    description: "Premium Audi e-tron eFoil rentals delivered to your yacht, resort, or private island in Maldives.",
   },
 
   // Contact & Social
   contact: {
-    email: "hello@yourapp.com",
-    phone: "+1 (555) 123-4567",
+    email: "hello@efoil.rent",
+    phone: "+960 9606783344",
+    whatsapp: "https://wa.me/9606783344",
+    instagram: "https://ig.me/m/efoil.rent",
+    booking: "https://cal.com/efoil-maldives",
+    website: "https://www.efoil.rent",
   },
 
   social: {
-    twitter: "https://twitter.com/yourapp",
-    github: "https://github.com/yourapp",
-    linkedin: "https://linkedin.com/company/yourapp",
-    facebook: "https://facebook.com/yourapp",
-    instagram: "https://instagram.com/yourapp",
-  },
-
-  // App Store Links
-  appStores: {
-    ios: "https://apps.apple.com/app/yourapp",
-    android: "https://play.google.com/store/apps/details?id=com.yourapp",
+    twitter: "#",
+    github: "#",
+    linkedin: "#",
+    facebook: "#",
+    instagram: "https://www.instagram.com/efoil.rent/",
   },
 
   // Theme Colors (Tailwind classes)
   theme: {
-    primary: "lime-400",
-    primaryDark: "lime-500",
-    secondary: "emerald-500",
-    accent: "lime-400",
+    primary: "cyan-400",
+    primaryDark: "cyan-500",
+    secondary: "sky-500",
+    accent: "cyan-400",
   },
 
   // Features Section
   features: [
     {
-      icon: "🔒",
-      title: "Non-Custodial Wallet",
-      description: "Full control over your private keys",
+      icon: "anchor",
+      title: "Yacht & Boat Delivery",
+      description: "We deliver the eFoil directly to your vessel anywhere in the Maldives atolls",
       link: "#",
     },
     {
-      icon: "🔄",
-      title: "Built-in Exchange",
-      description: "Swap cryptocurrencies directly within the app",
+      icon: "building",
+      title: "Resort Service",
+      description: "Premium eFoil sessions at luxury resorts and private islands on demand",
       link: "#",
     },
     {
-      icon: "👤",
-      title: "Biometric Security",
-      description: "Face ID & multifactor authentication for extra protection",
+      icon: "graduation-cap",
+      title: "Expert Instruction",
+      description: "Professional instructor included with every session — beginners welcome",
       link: "#",
     },
     {
-      icon: "📱",
-      title: "QR Code Payments",
-      description: "Send and receive crypto effortlessly",
+      icon: "zap",
+      title: "Audi e-tron eFoil",
+      description: "Ride the world's finest electric hydrofoil — engineered by Audi for performance",
       link: "#",
     },
   ],
 
   // Stats for CTA Section
   stats: {
-    users: "500K+",
+    users: "95%",
     rating: "4.9★",
-    countries: "150+",
+    countries: "Maldives-wide",
   },
 
   // Navigation Links
   navigation: {
     main: [
-      { name: "About us", href: "#about" },
       { name: "Features", href: "#features" },
+      { name: "About", href: "#about" },
+      { name: "Packages", href: "#pricing" },
       { name: "FAQ", href: "#faq" },
     ],
-    product: [
-      { name: "Features", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Security", href: "#" },
-      { name: "Roadmap", href: "#" },
+    experiences: [
+      { name: "Yacht Delivery", href: "#" },
+      { name: "Resort Service", href: "#" },
+      { name: "Crew Trips", href: "#" },
+      { name: "Audi e-tron Board", href: "#" },
     ],
     company: [
       { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "Events", href: "#" },
+      { name: "Partners", href: "#" },
       { name: "Blog", href: "#" },
-      { name: "Press Kit", href: "#" },
     ],
-    support: [
-      { name: "Help Center", href: "#" },
-      { name: "Contact Us", href: "#" },
-      { name: "Status", href: "#" },
-      { name: "Terms of Service", href: "#" },
+    contact: [
+      { name: "WhatsApp Us", href: "https://wa.me/9606783344" },
+      { name: "Email Us", href: "mailto:hello@efoil.rent" },
+      { name: "Instagram", href: "https://www.instagram.com/efoil.rent/" },
+      { name: "Terms of Service", href: "/terms" },
     ],
   },
 
   // SEO & Metadata
   seo: {
-    title: "AppName - Secure & Easy-to-Use App Solution",
-    description: "Store, Send & Receive everything with confidence. Experience the future of digital solutions.",
-    keywords: ["app", "secure", "easy-to-use", "digital", "solution"],
-    ogImage: "/og-image.png",
-    twitterHandle: "@yourapp",
+    title: "eFoil Maldives — Premium eFoil Rentals",
+    description: "Premium Audi e-tron eFoil rentals in Maldives. Delivered to yachts, boats, and resorts.",
+    keywords: ["efoil", "maldives", "electric hydrofoil", "audi efoil", "efoil rental", "watersport maldives"],
+    ogImage: "/img/efoil-hero.jpeg",
+    twitterHandle: "@efoilmaldives",
   },
 };
 
 export type TemplateConfig = typeof templateConfig;
-

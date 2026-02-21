@@ -7,53 +7,57 @@ import * as motion from "motion/react-client";
 export function Pricing() {
   const pricingPlans = [
     {
-      name: "Starter",
-      price: "Free",
-      period: "forever",
-      description: "Perfect for trying out our platform",
+      name: "Test Drive",
+      price: "From",
+      priceHighlight: "Foiltribe",
+      period: "· Hulhumalé",
+      description: "Collaborating with Foiltribe to provide accessible rentals and lessons for all ages",
       features: [
-        "Up to 3 projects",
-        "Basic analytics",
-        "24/7 support",
-        "1GB storage",
-        "Community access",
+        "Single session rentals",
+        "Professional lessons",
+        "Open to all skill levels",
+        "Located in Hulhumalé",
+        "Certified instructors",
       ],
-      cta: "Get Started",
+      cta: "Contact on Instagram",
+      ctaHref: "https://ig.me/m/efoil.rent",
       highlighted: false,
     },
     {
-      name: "Pro",
-      price: "$29",
-      period: "/mo",
-      description: "Best for professional users",
+      name: "Point to Point Delivery",
+      price: "Custom",
+      period: "quote",
+      description: "We bring the full Audi e-tron eFoil experience directly to your yacht, resort, or private villa",
       features: [
-        "Unlimited projects",
-        "Advanced analytics",
-        "Priority support",
-        "100GB storage",
-        "API access",
-        "Custom integrations",
-        "Team collaboration",
+        "Maldives-wide delivery & pickup",
+        "Multi-day stays available",
+        "Beginner instruction included",
+        "Full safety kit (vest + helmet)",
+        "Optional add-ons (extra battery, GoPro)",
+        "Flexible scheduling",
+        "Insurance & liability covered",
       ],
-      cta: "Start Free Trial",
+      cta: "Book via WhatsApp",
+      ctaHref: "https://wa.me/9606783344?text=Hi%21+I%27d+like+to+book+an+eFoil+experience.",
       highlighted: true,
       badge: "Most Popular",
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "For large organizations",
+      name: "Determination Program",
+      price: "First 3",
+      period: "sessions free",
+      description: "Adaptive eFoil experiences — we cover the cost of the first 3 sessions for people with disabilities",
       features: [
-        "Everything in Pro",
-        "Dedicated support",
-        "Unlimited storage",
-        "Custom contracts",
-        "SLA guarantee",
-        "Advanced security",
+        "First 3 sessions complimentary",
+        "Personalized instruction",
+        "Priority scheduling",
+        "Specialized safety protocols",
+        "Located in Hulhumalé",
       ],
-      cta: "Contact Sales",
+      cta: "Inquire on Instagram",
+      ctaHref: "https://ig.me/m/efoil.rent",
       highlighted: false,
+      badge: "Accessibility Initiative",
     },
   ];
 
@@ -69,13 +73,13 @@ export function Pricing() {
           className="text-center mb-16 space-y-4"
         >
           <div className="inline-block px-4 py-1.5 bg-highlight rounded-full">
-            <span className="text-xs uppercase font-bold text-black">Pricing</span>
+            <span className="text-xs uppercase font-bold text-black">Packages</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-            Simple, transparent pricing
+            Choose your eFoil experience
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Choose the perfect plan for your needs. Always flexible to scale up or down.
+            Whether you need delivery to your yacht or a local test session — we have you covered.
           </p>
         </motion.div>
 
@@ -100,10 +104,10 @@ export function Pricing() {
                   : "border border-transparent"
               }`}
             >
-              {/* Badge for highlighted plan */}
+              {/* Badge */}
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1.5 bg-highlight text-black text-xs font-bold rounded-full uppercase">
+                  <span className="px-4 py-1.5 bg-highlight text-black text-xs font-bold rounded-full uppercase whitespace-nowrap">
                     {plan.badge}
                   </span>
                 </div>
@@ -126,7 +130,7 @@ export function Pricing() {
                     {plan.price}
                   </span>
                   {plan.period && (
-                    <span className="text-zinc-600 dark:text-zinc-400">
+                    <span className="text-zinc-600 dark:text-zinc-400 text-sm">
                       {plan.period}
                     </span>
                   )}
@@ -153,15 +157,18 @@ export function Pricing() {
               </ul>
 
               {/* CTA Button */}
-              <button
-                className={`w-full cursor-pointer py-3 px-6 rounded-xl font-semibold transition-all ${
+              <a
+                href={plan.ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full cursor-pointer py-3 px-6 rounded-xl font-semibold transition-all text-center ${
                   plan.highlighted
                     ? "bg-highlight text-black hover:bg-highlight/90"
                     : "bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 }`}
               >
                 {plan.cta}
-              </button>
+              </a>
             </div>
           ))}
         </motion.div>
@@ -174,13 +181,12 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-12 text-sm text-zinc-600 dark:text-zinc-400"
         >
-          All plans include a 14-day free trial. No credit card required.{" "}
-          <a href="#" className="text-zinc-900 dark:text-white font-semibold hover:underline">
-            Compare plans →
+          All rentals include professional instruction and safety gear.{" "}
+          <a href="mailto:hello@efoil.rent" className="text-zinc-900 dark:text-white font-semibold hover:underline">
+            Contact us for custom pricing →
           </a>
         </motion.p>
       </div>
     </section>
   );
 }
-

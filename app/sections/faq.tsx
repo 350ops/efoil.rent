@@ -8,29 +8,44 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: "Is my data safe with this app?",
+      question: "What is an eFoil?",
       answer:
-        "Yes! We use industry-leading encryption standards to ensure your data is completely secure. Your information is encrypted both in transit and at rest, and we never share your data with third parties.",
+        "An eFoil — short for electric hydrofoil surfboard — is a cutting-edge watersport device. It merges traditional hydrofoil surfing with advanced electric propulsion, allowing riders to glide silently above the water. An eFoil consists of a board with a rechargeable battery, an electric motor, and a hydrofoil (mast with underwater wing). Speed is controlled via a wireless handheld remote, while altitude is managed by shifting body weight.",
     },
     {
-      question: "Which platforms are supported?",
+      question: "How does eFoil delivery to yachts and resorts work?",
       answer:
-        "We support a wide range of platforms, including iOS, Android, Web, and Desktop applications. You can seamlessly sync your data across all your devices for a unified experience.",
+        "We connect you with trusted partners who bring the Audi e-tron eFoil directly to your yacht, liveaboard, or resort. They handle all transport, setup, and equipment handover — you just show up and fly.",
     },
     {
-      question: "How can I restore my account?",
+      question: "Is eFoiling suitable for beginners?",
       answer:
-        "You can restore your account using your recovery phrase or backup key. Simply go to the login page, select 'Restore Account', and follow the step-by-step instructions. Make sure to keep your recovery phrase in a safe place.",
+        "Yes. All our partners provide professional instruction and safety briefings. The Audi e-tron eFoil is beginner-friendly, and most riders are up and flying within a short session. No prior experience is required.",
     },
     {
-      question: "How long do transactions take?",
+      question: "What is the minimum rental duration?",
       answer:
-        "Transaction times vary depending on network conditions, but typically complete within 5-10 minutes. You can track the status of your transactions in real-time through our app.",
+        "Our partners offer flexible packages starting from 2-hour sessions. You can also arrange to keep the eFoil for the duration of your stay (multiple days) for maximum freedom on the water.",
     },
     {
-      question: "Are there any fees for using the app?",
+      question: "What happens if the weather is bad on my booking day?",
       answer:
-        "The app is free to download and use. However, standard network fees may apply for certain transactions. We always display all fees transparently before you confirm any action.",
+        "Safety is paramount. Our partners monitor weather conditions and will work with you to reschedule if conditions are unsafe for riding. Weather-related cancellations are always fully refundable or rescheduled at no charge.",
+    },
+    {
+      question: "Is a safety briefing included?",
+      answer:
+        "Yes. Every rental includes a safety briefing and equipment overview from the provider. Life vests, helmets, and all essential protective gear are standard — provided at no extra cost.",
+    },
+    {
+      question: "How do I book an eFoil rental?",
+      answer:
+        "Simply contact us via WhatsApp or email with your dates and location. We will coordinate with our partners to find the best package for you and handle all booking arrangements. It's that simple.",
+    },
+    {
+      question: "What eFoil equipment is used?",
+      answer:
+        "Our partners exclusively use the Audi e-tron eFoil, known for its safety features, performance, and silence. The Aeroloop inflatable board combines the rigidity of a hardboard with portable safety. We ensure you ride the best equipment available in the Maldives.",
     },
   ];
 
@@ -46,7 +61,7 @@ export function FAQ() {
             Frequently asked questions
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            We have quick answers to the most popular questions below
+            Common questions about eFoil rentals in Maldives
           </p>
         </div>
 
@@ -74,7 +89,7 @@ export function FAQ() {
                     openIndex === index ? "rotate-135" : ""
                   }`}
                 >
-                  <DynamicIcon name="plus" className="w-5 h-5 text-black" />
+                  <DynamicIcon name="plus" className="w-5 h-5 text-black dark:text-white" />
                 </div>
               </button>
               <div
@@ -93,4 +108,3 @@ export function FAQ() {
     </section>
   );
 }
-
