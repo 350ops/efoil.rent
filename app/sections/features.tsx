@@ -83,7 +83,7 @@ export function Features() {
               <div className={`relative z-10 w-10 h-10 rounded-full flex items-center justify-center mb-2 ${feature.isHighlight ? "bg-black/10" : "bg-neutral-100 dark:bg-zinc-900"}`}>
                 <DynamicIcon name={feature.icon as any} className={`w-5 h-5 ${feature.isHighlight ? "text-highlight" : ""}`} />
               </div>
-              <span className={`text-xs font-bold text-center leading-tight px-3 ${feature.isHighlight ? "text-black" : "text-zinc-800 dark:text-white"}`}>
+              <span className={`text-xs font-bold text-center leading-tight px-3 ${feature.isHighlight ? "text-white" : "text-zinc-800 dark:text-white"}`}>
                 {feature.title}
               </span>
             </motion.div>
