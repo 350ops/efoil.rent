@@ -34,7 +34,7 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="py-[27px] -mt-[234px] -mb-[234px] px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
