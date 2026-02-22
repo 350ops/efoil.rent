@@ -39,12 +39,12 @@ export function Mission() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0, ease: cubicBezier(0.4, 0, 0.2, 1) }}
-          className="order-1 lg:order-2 rounded-[19px] pt-[178px] pb-[178px] -mt-[43px] -mb-[43px]">
-            <div className="inline-block px-4 py-[7px] bg-highlight rounded-full mt-[93px] mb-[93px]">
+          className="order-1 lg:order-2">
+            <div className="inline-block px-4 py-1.5 bg-highlight rounded-full mb-4">
               <span className="text-xs uppercase font-bold text-black">How It Works</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight -mt-[67px] mb-4 pt-[56px] pb-[56px] align-top">
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white leading-tight mb-4">
               We handle the operations. You focus on your guests.
             </h2>
 
