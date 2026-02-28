@@ -22,6 +22,11 @@ const youngSerif = Young_Serif({
 export const metadata: Metadata = {
   title: "Manta Fleet – B2B Marine Fleet Management for Yachts, Resorts & Marinas",
   description: "Manta Fleet provides B2B fleet operations and managed services for yachts, resorts, and marinas — controlling fuel, maintenance, and procurement costs.",
+  verification: {
+    other: {
+      "facebook-domain-verification": ["eyb2f9v9vmck2qt4g5jsy4cmgdx94u"],
+    },
+  },
 };
 
 export default function RootLayout({
