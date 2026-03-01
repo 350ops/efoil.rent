@@ -97,7 +97,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-zinc-600 dark:text-zinc-400 text-sm text-center md:text-left">
-            <p>© {currentYear} efoil.rent is a trading name of Manta Fleet Limited (Company No. 17041670).</p>
+            <p>© {currentYear} efoil.rent is a trading name of Manta Fleet Limited (Company No. 17041670).+44 7311 132677</p>
             <p className="mt-1">Registered in England and Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
           </div>
           <div className="flex gap-6 text-sm">
